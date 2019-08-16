@@ -5,46 +5,53 @@
 #### Installation instructions
 
 1. Copy this repository to your local folder. This can be done by running the following command:
+
 ```bash
-git clone https://github.com/pszufe/ComplexNetworks2019.git
-```
-Note that on the Windows platform the above command requires the *git* tool available at [https://git-scm.com/download/win](https://git-scm.com/download/win).
+  git clone https://github.com/pszufe/ComplexNetworks2019.git
+  ```
+  Note that on the Windows platform the above command requires the *git* tool available at [https://git-scm.com/download/win](https://git-scm.com/download/win).
 
 2. Please download Julia from [https://julialang.org/downloads/](https://julialang.org/downloads/) and install 
 *Current stable release* (at the time of the workshop it is version `1.1.1`. We recommend selecting the 64-bit platform.
 
 3. Type `julia` to start Julia and run the following installation scripts:
-```julia
-using Pkg
-Pkg.add("PyCall")
-Pkg.add("Conda")
-using Conda
-Conda.runconda(`install folium -c conda-forge`)
-```
+
+  ```julia
+  using Pkg
+  Pkg.add("PyCall")
+  Pkg.add("Conda")
+  using Conda
+  Conda.runconda(`install folium -c conda-forge`)
+  ```
 
 4. Note that on the day 4 we will be processing XML data. 
-On the Linux platform processing such data requires the XML library `libexpat` to be present in the operating system.
-When using Linux Ubuntu run the following command:
-```bash
-sudo apt install libexpat-dev
-```
-The above step is not required on Windows. 
+
+  On the Linux platform processing such data requires the XML library `libexpat` to be present in the operating system.
+  When using Linux Ubuntu run the following command:
+  ```bash
+  sudo apt install libexpat-dev
+  ```
+  The above step is not required on Windows. 
 
 5. The programming environment for Julia is an Atom (https://atom.io/) plugin named Juno. In order to install Atom with Juno please follow the steps below:
 
-a)      Download and install Atom (available at https://atom.io/).
-b)      Start Atom and press `Ctrl` + `,` ( *Ctrl  key* + *comma key* ) to open the *Atom settings* screen.
-c)      Select the *Install* tab.
-d)      In the *Search packages* field, type uber-juno and press *Enter* .
-e)      You will see the uber-juno package developed by JunoLab—click *Install* to install the package.
+  a)      Download and install Atom (available at https://atom.io/).
+  
+  b)      Start Atom and press `Ctrl` + `,` ( *Ctrl  key* + *comma key* ) to open the *Atom settings* screen.
+  
+  c)      Select the *Install* tab.
+  
+  d)      In the *Search packages* field, type uber-juno and press *Enter* .
+  
+  e)      You will see the uber-juno package developed by JunoLab—click *Install* to install the package.
 
 6. Optionally, it is possible to use Julia within Jupyter notebook (this was largely used during the days 1 and 2 of the workshop).
 In order to try Julia inside a Jupyter notebook start the Julia console and run the two following commands:
 
-```julia
-using IJulia
-notebook(dir="/folder/to/source/codes")   # a new web browser tab should open
-```
+  ```julia
+  using IJulia
+  notebook(dir="/folder/to/source/codes")   # a new web browser tab should open
+  ```
 
 
 ## Modelling hyperaphs in Julia with the Hypergraphs.jl package
