@@ -1,0 +1,8 @@
+[deps]
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Distributed = "8ba89e20-285c-5b6f-9357-94700520ee1b"
+IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
+LightGraphs = "093fc24a-ae57-5d10-9952-331d41423f4d"
+OpenStreetMapX = "86cd37e6-c0ff-550b-95fe-21d72c8d4fc9"
+ParallelDataTransfer = "2dcacdae-9679-587a-88bb-8b444fb7085b"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
