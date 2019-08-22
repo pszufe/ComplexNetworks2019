@@ -26,7 +26,7 @@ preread = OpenStreetMapX.get_map_data(".", "las_vegas.osm");
 println("The map contains $(length(map_data.nodes)) nodes")
 
 function point_to_node(point::LLA, map_data::OpenStreetMapX.MapData)
-    nearest_node(map_data.nodes,ENU(point, map_data.bounds), map_data.network)
+    nearest_node(map_data.nodes,ENU(point, map_data.bounds), map_data)
 end
 
 sbws_la = CSV.read("Subway_LV.csv")
@@ -39,7 +39,7 @@ N = nrow(sbws_la)
             dista = 0.0
             route = [sbws_la.node[i]]
             if sbws_la.node[i] != sbws_la.node[j]
-                route, dista, time = shortest_route(map_data.network, sbws_la.node[i], sbws_la.node[j])
+                route, dista, time = shortest_route(map_data, sbws_la.node[i], sbws_la.node[j])
             end
             println(f,"$i,$j,$dista,$(join(route,"#"))")
         end
