@@ -1,18 +1,19 @@
 ###
-# This script is designed for multi-core parallelizaition 
-# run 
+# This script is designed for multi-core parallelizaition
+# run
 # julia -p N 9_subway_preps.jl
-# where N is the number of cores you want to use. 
-# 
+# where N is the number of cores you want to use.
+#
 # For a reasonable running time use a machine with at least 32 cores
 #
-# 
-
-using Pkg
-Pkg.activate(".")
+#
 
 using Distributed
 println("using $(Distributed.nworkers()) worker(s)")
+
+@everywhere using Pkg
+@everywhere Pkg.activate(".")
+
 using HTTP, CSV, DataFrames, OpenStreetMapX
 @everywhere using HTTP
 @everywhere using CSV
@@ -32,6 +33,7 @@ end
 sbws_la = CSV.read("Subway_LV.csv")
 
 N = nrow(sbws_la)
+N = 4 # omit this line to get a real-life scale computation, but it is long
 
 @everywhere function calc_distances(i,N, sbws_la)
     open(string(lpad(i,4,"0"),"_distance.csv"),"w") do f

@@ -32,4 +32,3 @@ println("threads: ", Threads.nthreads())
 @time ssum(x)
 @time tsum(x)
 @time tsum(x)
-

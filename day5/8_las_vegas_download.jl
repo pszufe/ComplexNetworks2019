@@ -1,7 +1,6 @@
 using Pkg
 Pkg.activate(".")
 
-
 filenames = (mapdata="las_vegas.osm",)
 
 url = "https://s3szufel.s3.eu-central-1.amazonaws.com/ComplexNetworks2019/"

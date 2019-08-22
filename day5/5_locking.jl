@@ -1,6 +1,3 @@
-using Pkg
-Pkg.activate(".")
-
 function f_bad()
     x = 0
     Threads.@threads for i in 1:10^7
@@ -44,4 +41,3 @@ for f in [f_bad, f_atomic, f_spin, f_mutex]
     @time println(f())
     @time println(f())
 end
-

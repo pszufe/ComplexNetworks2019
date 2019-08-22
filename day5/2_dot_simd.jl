@@ -1,12 +1,12 @@
 using Pkg
 Pkg.activate(".")
 
-using BenchmarkTools
+using BenchmarkTools, LinearAlgebra
 
 function dot1(x, y)
     s = 0.0
     for i in 1:length(x)
-        @inbounds s += x[i]*y[i]
+        s += x[i]*y[i]
     end
     s
 end
@@ -20,13 +20,11 @@ function dot2(x, y)
 end
 
 
-x = 100*rand(10000)
-y = 100*rand(10000)
+x = 1000*rand(10000);
+y = 1000*rand(10000);
 
 res1 = @btime dot1($x, $y)
 res2 = @btime dot2($x, $y)
+res3 = @btime dot($x, $y)
 
-println(res1)
-println(res2)
-
-
+println([res2, res3] .- res1)

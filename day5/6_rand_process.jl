@@ -24,4 +24,3 @@ end
 @time s_rand()
 @time p_rand()
 @time p_rand()
-
