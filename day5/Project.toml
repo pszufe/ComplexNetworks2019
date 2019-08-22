@@ -1,8 +1,10 @@
 [deps]
 BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 Distributed = "8ba89e20-285c-5b6f-9357-94700520ee1b"
 GraphPlot = "a2cc645c-3eea-5389-862e-a155d0052231"
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
 IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
 LightGraphs = "093fc24a-ae57-5d10-9952-331d41423f4d"
 OpenStreetMapX = "86cd37e6-c0ff-550b-95fe-21d72c8d4fc9"
